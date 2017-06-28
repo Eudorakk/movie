@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>电影列表</title>
+        <style type="text/css">  
+        * { margin: 0; padding: 0; }  
+        /*html,body { background: #eee; }*/  
+        ul,li { list-style: none; }  
+        a { text-decoration: none; }  
+        img { vertical-align: middle; }  
+        /* 跳转页面动画 */  
+        .slide-enter,  
+        .slide_back-enter {  
+            position: absolute;  
+            width: 100%;  
+        }  
+        .slide-leave,  
+        .slide_back-leave {  
+            position: absolute;  
+            width: 100%;  
+        }  
+        .slide-enter-active,  
+        .slide_back-enter-active {  
+            transition: all 0.3s linear;  
+        }  
+        .slide-leave-active {  
+            position: absolute;  
+            transition: all 0.3s linear;  
+            transform: translate(-100%);  
+        }  
+        .slide-enter{  
+            transform: translateX(100%);  
+        }  
+        .slide_back-leave-active {  
+            position: absolute;  
+            transition: all 0.3s linear;  
+            transform: translate(100%);  
+        }  
+        .slide_back-enter {  
+            transform: translateX(-100%);  
+        }  
+        #app{
+        width: 90%;
+        	margin: 0 auto;
+        }
+        /*#app>div{
+        	margin-left: 130px;
+        	margin-top: -30px;
+        }*/
+        *{
+        	box-sizing: border-box;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+<script type="text/javascript">  
+  
+        // 计算html的font-size  
+        (function(){  
+            function resizeBaseFontSize(){  
+            	//roothtml可以得到html标签   ----document.documentElement--获得的是html元素
+                var rootHtml = document.documentElement,  
+                    deviceWidth = rootHtml.clientWidth;  
+  
+                if(deviceWidth > 640){  
+                    deviceWidth = 640;  
+                }  
+  
+                rootHtml.style.fontSize = deviceWidth / 20.5 + "px";  
+            }  
+  
+            resizeBaseFontSize();  
+  //监听window的resize和orientationchange事件  
+  //resize---当浏览器窗口大小发上改变时
+  //orientationchange---在用户水平或者是竖直旋转屏幕的时候触发的事件
+  //false是指在冒泡阶段执行
+            window.addEventListener("resize", resizeBaseFontSize, false);  
+            window.addEventListener("orientationchange", resizeBaseFontSize, false);  
+        })();  
+    </script>  
+</html>
